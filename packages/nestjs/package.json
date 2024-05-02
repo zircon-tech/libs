@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "A TypeScript library with utilities for NestJS projects",
   "main": "./dist/index.js",
-  "directories": {
-    "test": "test"
-  },
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist && tsc"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -42,6 +40,12 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   },
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "nestjs"
   ],

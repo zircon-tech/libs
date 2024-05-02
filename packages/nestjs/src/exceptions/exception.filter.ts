@@ -11,8 +11,8 @@ import { Request, Response } from 'express';
 import { Exception, GenericExceptionReason } from './exception';
 
 @Catch()
-export class ApiExceptionFilter implements ExceptionFilter {
-  private readonly logger = new Logger(ApiExceptionFilter.name);
+export class GenericExceptionFilter implements ExceptionFilter {
+  private readonly logger = new Logger(GenericExceptionFilter.name);
   async catch(exception: unknown, host: ArgumentsHost) {
     const isDevEnv = process.env.NODE_ENV === 'development';
     const ctx = host.switchToHttp();
