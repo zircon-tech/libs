@@ -11,9 +11,7 @@
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
-      "@utils/*": ["../utils/utils/*"],
-      "@src/*": ["./src/*"],
-      "@test/*": ["./test/*"]
+      "@utils/*": ["./utils/*"]
     },
     "incremental": true,
     "skipLibCheck": true,
