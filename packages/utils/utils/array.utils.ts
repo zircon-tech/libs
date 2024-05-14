@@ -11,28 +11,24 @@
  * { foo: 'bar', bar: 'foo' }
  * ```
  */
-export function reduceIgnoringNullish<R = any>(query: R[]): R {
+export function reduceIgnoringNullish<R = any>(
+  query: (R | false | null | undefined)[],
+): R {
   return query
     .filter(Boolean)
     .map((obj: any) => {
       return Object.entries(obj)
         .filter(([_, value]) => value !== null)
-        .reduce(
-          (acc: any, [key, value]) => {
-            acc[key] = value;
-            return acc;
-          },
-          {} as Record<string, any>,
-        );
+        .reduce((acc: any, [key, value]) => {
+          acc[key] = value;
+          return acc;
+        }, {} as Record<string, any>);
     })
-    .reduce(
-      (acc: any, curr: any) => {
-        acc = { ...acc, ...curr };
-        return acc;
-        /* eslint-disable-next-line */
-      },
-      {} as Record<string, any>,
-    );
+    .reduce((acc: any, curr: any) => {
+      acc = { ...acc, ...curr };
+      return acc;
+      /* eslint-disable-next-line */
+    }, {} as Record<string, any>);
 }
 
 /**
