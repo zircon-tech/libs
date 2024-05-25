@@ -1,11 +1,13 @@
 {
-  "name": "nestjs",
+  "name": "@zircontech/nestjs",
   "version": "0.0.1",
   "description": "A TypeScript library with utilities for NestJS projects",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./dist && tsc"
+    "build": "rm -rf ./dist && tsc",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "jest"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -15,7 +17,8 @@
     "class-validator": "^0.14.1",
     "mongoose": "^8.3.3",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1"
+    "rxjs": "^7.8.1",
+    "@zircontech/utils": "*"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
@@ -41,7 +44,7 @@
     "typescript": "^5.1.3"
   },
   "files": [
-    "dist/**/*"
+    "dist/**"
   ],
   "keywords": [
     "nestjs",

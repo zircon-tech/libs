@@ -1,5 +1,5 @@
 {
-  "name": "utils",
+  "name": "@zircontech/utils",
   "version": "0.0.1",
   "description": "",
   "main": "./dist/index.js",

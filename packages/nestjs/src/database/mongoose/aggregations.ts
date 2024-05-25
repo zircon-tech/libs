@@ -1,5 +1,5 @@
 import { PipelineStage } from 'mongoose';
-import { reduceIgnoringNullish } from '@utils/array.utils';
+import { Arrays } from '@zircontech/utils';
 
 export const $match = <T = any>(
   $match: Partial<Record<keyof T, any>>,
@@ -24,7 +24,7 @@ export const $unwind = (
 export const $addFields = (
   fields: { name: string; path?: string; condition?: Record<string, any> }[],
 ): PipelineStage.AddFields => ({
-  $addFields: reduceIgnoringNullish(
+  $addFields: Arrays.reduceIgnoringNullish(
     fields.map(field => ({
       [field.name]: field.condition ?? `$${field.path}`,
     })),
@@ -36,7 +36,7 @@ export const $project = <T = any>(
   include = true,
 ): PipelineStage.Project => ({
   $project: Array.isArray(fields)
-    ? reduceIgnoringNullish(
+    ? Arrays.reduceIgnoringNullish(
         fields.map(field => ({
           [field]: include ? 1 : -1,
         })),

@@ -8,6 +8,7 @@ node_modules/
 dist/
 /packages/*/node_modules/
 /packages/*/dist/
+/packages/*/tsconfig.tsbuildinfo
 
 # Compiled Java class files
 *.class

@@ -1,5 +1,5 @@
 {
-  "name": "zircon-tech-packages",
+  "name": "@zircontech/libs",
   "version": "1.0.0",
   "private": true,
   "description": "zircon tech internal libraries",
@@ -11,9 +11,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
     "changeset": "changeset",
-    "version": "changeset version"
+    "version": "changeset version",
+    "build": "turbo run build",
+    "build:packages:nestjs": "turbo run build --filter @zircontech/nestjs",
+    "build:packages:nextjs": "turbo run build --filter @zircontech/nextjs",
+    "build:packages:utils": "turbo run build --filter @zircontech/utils",
+    "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",

@@ -11,7 +11,7 @@
  * { foo: 'bar', bar: 'foo' }
  * ```
  */
-export function reduceIgnoringNullish<R = any>(
+function reduceIgnoringNullish<R = any>(
   query: (R | false | null | undefined)[],
 ): R {
   return query
@@ -46,7 +46,7 @@ export function reduceIgnoringNullish<R = any>(
  * }
  * ```
  */
-export function arrayToMapByKey<T>(
+function arrayToMapByKey<T>(
   arr: T[],
   keyProp: keyof Partial<T>,
   keyTransform?: (elem: any) => string,
@@ -74,7 +74,7 @@ export function arrayToMapByKey<T>(
  * }
  * ```
  */
-export function arrayToMapArrByKey<T extends object>(
+function arrayToMapArrByKey<T extends object>(
   arr: T[],
   keyProp: keyof Partial<T>,
   keyTransform?: (elem: any) => string,
@@ -108,6 +108,13 @@ export function arrayToMapArrByKey<T extends object>(
  * hasObjectKeyFromArray(arr, obj) // will return true
  * ```
  */
-export function hasObjectKeyFromArray(arr: any[], obj: Record<string, any>) {
+function hasObjectKeyFromArray(arr: any[], obj: Record<string, any>) {
   return arr.some(key => obj.hasOwnProperty(key) && obj[key] != null);
 }
+
+export {
+  reduceIgnoringNullish,
+  arrayToMapByKey,
+  arrayToMapArrByKey,
+  hasObjectKeyFromArray,
+};
