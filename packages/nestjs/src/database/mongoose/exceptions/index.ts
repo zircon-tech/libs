@@ -4,7 +4,7 @@ import {
   Exception,
   GenericExceptionReason,
   GenericStatusResolver,
-} from '../../exceptions/exception';
+} from '../../../exceptions/exception';
 
 export function handleMongooseError(error: MongooseError): never {
   if (error instanceof Error.ValidationError) {

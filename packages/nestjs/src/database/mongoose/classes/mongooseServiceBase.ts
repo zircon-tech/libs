@@ -1,7 +1,7 @@
 import { Document, PipelineStage } from 'mongoose';
 import { MongooseRepositoryBase } from './mongooseRepositoryBase';
-import { GenericFilterDTO } from '@src/dtos/genericFilterDTO';
-import { $limit, $skip, $sort } from '@src/database/mongoose/aggregations';
+import { GenericFilterDTO } from '../../../dtos/genericFilterDTO';
+import { $limit, $skip, $sort } from '../aggregations';
 
 export class MongooseServiceBase<T> {
   constructor(protected repository: MongooseRepositoryBase<T>) {}

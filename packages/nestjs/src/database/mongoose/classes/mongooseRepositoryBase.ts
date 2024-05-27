@@ -6,8 +6,8 @@ import {
   SortOrder,
   UpdateQuery,
 } from 'mongoose';
-import { handleMongooseError } from './exceptions';
-import { GenericRepositoryBase } from '../../crud/genericRepositoryBase';
+import { handleMongooseError } from '../exceptions';
+import { GenericRepositoryBase } from '../../../crud/genericRepositoryBase';
 
 export class MongooseRepositoryBase<T> extends GenericRepositoryBase<T> {
   constructor(protected model: Model<T & Document>) {

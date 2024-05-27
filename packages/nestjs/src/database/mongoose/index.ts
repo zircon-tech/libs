@@ -1,4 +1,5 @@
-export * from './aggregations';
-export * from './exceptions';
-export * from './mongooseRepositoryBase';
-export * from './mongooseServiceBase';
+import * as aggregations from './aggregations';
+import * as classes from './classes';
+import * as exceptions from './exceptions';
+
+export default { aggregations, classes, exceptions };

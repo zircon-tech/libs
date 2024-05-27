@@ -1,5 +1,4 @@
-node_modules
-tests
-*.test.js
-.travis.yml
-.build
+*
+!dist
+!package.json
+!tsconfig.json

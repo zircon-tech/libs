@@ -4,6 +4,17 @@
   "description": "A TypeScript library with utilities for NestJS projects",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./crud": "./dist/crud/index.js",
+    "./database": "./dist/database/index.js",
+    "./dtos": "./dist/dtos/index.js",
+    "./exceptions": "./dist/exceptions/index.js",
+    "./validators": "./dist/validators/index.js"
+  },
   "scripts": {
     "build": "rm -rf ./dist && tsc",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
@@ -43,9 +54,6 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   },
-  "files": [
-    "dist/**"
-  ],
   "keywords": [
     "nestjs",
     "typescript",
