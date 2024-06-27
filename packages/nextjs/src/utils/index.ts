@@ -1,2 +1,2 @@
-export * from './class.utils';
+export * from './tailwind.utils';
 export * from './http.utils';
